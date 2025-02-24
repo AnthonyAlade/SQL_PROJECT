@@ -28,6 +28,7 @@ This project involves analyzing a COVID-19 dataset to derive meaningful insights
 -- Analyzing total cases vs. total deaths 
 
 -- SHOWS LIKELIHOD OF DYING IF YOU CONTRACT COVID IN YOUR COUNTRY
+
 SELECT location,date,total_cases,total_deaths,(total_deaths/total_cases)*100 AS DEATHPERCENTAGE
 
 FROM CovidDeaths$
@@ -75,8 +76,10 @@ ALTER TABLE Nashvillehousing
  ADD Saledateconverted Date
 
 UPDATE Nashvillehousing
+ 
  SET Saledateconverted = CONVERT(date,saledate)
 
 ###Technologies Used
+
 -SQL (Microsoft SQL Server)
 
