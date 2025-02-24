@@ -24,11 +24,16 @@ This project involves analyzing a COVID-19 dataset to derive meaningful insights
 - Aggregate functions, joins, and window functions to summarize and analyze datasets.  
 
 ### Example Query  
+
 -- Analyzing total cases vs. total deaths 
+
 -- SHOWS LIKELIHOD OF DYING IF YOU CONTRACT COVID IN YOUR COUNTRY
 SELECT location,date,total_cases,total_deaths,(total_deaths/total_cases)*100 AS DEATHPERCENTAGE
+
 FROM CovidDeaths$
+
 WHERE location LIKE '%NIGERIA%' AND  continent IS NOT NULL
+
 ORDER BY 1,2
 
 ## Project 2: Data Cleaning on Nashville Housing Dataset
@@ -58,12 +63,15 @@ In this project, I focused on a data cleaning task for a Nashville housing datas
 --STANDARDIZING DATE FORMAT
 
 SELECT *
+ 
  FROM Nashvillehousing
 
 SELECT SaleDate, CONVERT(date,saledate)
+ 
  FROM Nashvillehousing
 
 ALTER TABLE Nashvillehousing
+ 
  ADD Saledateconverted Date
 
 UPDATE Nashvillehousing
