@@ -56,12 +56,16 @@ In this project, I focused on a data cleaning task for a Nashville housing datas
 ### Example Query 
 
 --STANDARDIZING DATE FORMAT
+
 SELECT *
  FROM Nashvillehousing
+
 SELECT SaleDate, CONVERT(date,saledate)
  FROM Nashvillehousing
+
 ALTER TABLE Nashvillehousing
  ADD Saledateconverted Date
+
 UPDATE Nashvillehousing
  SET Saledateconverted = CONVERT(date,saledate)
 
