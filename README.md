@@ -27,11 +27,13 @@ This project involves analyzing a COVID-19 dataset to derive meaningful insights
 
 ### Example Query  
 
--- Analyzing total cases vs. total deaths 
+- Analyzing total cases vs. total deaths 
 
--- SHOWS LIKELIHOD OF DYING IF YOU CONTRACT COVID IN YOUR COUNTRY
+- SHOWS LIKELIHOD OF DYING IF YOU CONTRACT COVID IN YOUR COUNTRY
 
-SELECT location,date,total_cases,total_deaths,(total_deaths/total_cases)*100 AS DEATHPERCENTAGE
+SELECT location , date, total_cases , total_deaths , 
+
+(total_deaths/total_cases)*100 AS DEATHPERCENTAGE
 
 FROM CovidDeaths$
 
@@ -102,6 +104,9 @@ This project explores a supermarket sales dataset to reveal patterns in sales pe
 - Date and time functions to return a specific part of the time and date
 
   ### Example Query
+
+  - BEST SELLING PRODUCT LINE BY REVENUE and QUANTITY SOLD
+
   SELECT Product_line, ROUND(SUM(Total_Profit),2) AS best_product, SUM(Quantity) AS  units_sold
 
   FROM [Supermarket sales].[dbo].[Sales_Report]
