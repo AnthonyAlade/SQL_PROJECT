@@ -1,6 +1,6 @@
 # SQL_PROJECT
 
-Welcome to my SQL portfolio, in this repository, you will find two SQL projects that highlight my skills in exploratory data analysis and data cleaning.    
+Welcome to my SQL portfolio, in this repository, you will find three SQL projects that highlight my skills in exploratory data analysis and data cleaning.    
 
 ## Project Overview  
 This repository contains three key SQL projects:  
@@ -31,15 +31,15 @@ This project involves analyzing a COVID-19 dataset to derive meaningful insights
 
 - SHOWS LIKELIHOD OF DYING IF YOU CONTRACT COVID IN YOUR COUNTRY
 
-SELECT location , date, total_cases , total_deaths , 
+  SELECT location , date, total_cases , total_deaths , 
 
-(total_deaths/total_cases)*100 AS DEATHPERCENTAGE
+  (total_deaths/total_cases)*100 AS DEATHPERCENTAGE
 
-FROM CovidDeaths$
+  FROM CovidDeaths$
 
-WHERE location LIKE '%NIGERIA%' AND  continent IS NOT NULL
+  WHERE location LIKE '%NIGERIA%' AND  continent IS NOT NULL
 
-ORDER BY 1,2
+  ORDER BY 1,2
 
 ## Project 2: Data Cleaning on Nashville Housing Dataset
 ### Description
@@ -66,23 +66,23 @@ In this project, I focused on a data cleaning task for a Nashville housing datas
   
 ### Example Query 
 
---STANDARDIZING DATE FORMAT
+- STANDARDIZING DATE FORMAT
 
-SELECT *
+  SELECT *
  
- FROM Nashvillehousing
+  FROM Nashvillehousing
 
-SELECT SaleDate, CONVERT(date,saledate)
+  SELECT SaleDate, CONVERT(date,saledate)
  
- FROM Nashvillehousing
+  FROM Nashvillehousing
 
-ALTER TABLE Nashvillehousing
+  ALTER TABLE Nashvillehousing
  
- ADD Saledateconverted Date
+  ADD Saledateconverted Date
 
-UPDATE Nashvillehousing
+  UPDATE Nashvillehousing
  
- SET Saledateconverted = CONVERT(date, saledate)
+  SET Saledateconverted = CONVERT(date, saledate)
 
  ## Project 3: Exploratory Data Analysis on Supermarket sales  Dataset  
 ### Description  
@@ -107,13 +107,13 @@ This project explores a supermarket sales dataset to reveal patterns in sales pe
 
   - BEST SELLING PRODUCT LINE BY REVENUE and QUANTITY SOLD
 
-  SELECT Product_line, ROUND(SUM(Total_Profit),2) AS best_product, SUM(Quantity) AS  units_sold
+    SELECT Product_line, ROUND(SUM(Total_Profit),2) AS best_product, SUM(Quantity) AS  units_sold
 
-  FROM [Supermarket sales].[dbo].[Sales_Report]
+    FROM [Supermarket sales].[dbo].[Sales_Report]
 
-  GROUP BY Product_line
+    GROUP BY Product_line
 
-  ORDER BY SUM(Total_Profit) DESC , SUM(Quantity) 
+    ORDER BY SUM(Total_Profit) DESC , SUM(Quantity) 
 
   
 
